@@ -2,53 +2,25 @@ package lesson8.competition;
 
 public class Cat extends Participant {
 
-    private String name;
-    private int maxHight;
-    private int maxDistance;
-    private boolean condition = true;
-
-    public Cat(String name, int maxHeight, int maxDistance) {
-        this.name = name;
-        this.maxHight = maxHeight;
-        this.maxDistance = maxDistance;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public boolean getCondition() {
-        return condition;
-    }
-
-    @Override
-    public void setCondition(boolean condition) {
-        this.condition = condition;
-    }
-
-    @Override
-    public int inMaxDistance() {
-        return maxDistance;
-    }
-
-    @Override
-    public int inMaxHeight() {
-        return maxHight;
-    }
-
-    @Override
-    public String runDistance(Treadmill treadmill) {
-        if (treadmill.getDistance() <= maxDistance) {
-            return name + " is able to run distance " + maxDistance;
-        }else return name + " is not able to run the distance " + maxDistance;
+    public Cat(String name, int maxDistance, int maxHeight) {
+        super(name, maxDistance, maxHeight);
     }
 
     @Override
     public String jumpHeight(Wall wall) {
-        if (wall.getHeight() <= maxHight) {
-            return name + " is able to overcome the wall with height in " + maxHight;
-        } else return name + " is not able to overcome the wall with height in " + maxHight;
+        if(wall.getSize() < getMaxHeight()) {
+            return getName() + " overcome the wall in " + wall.getSize() + " meters";
+        } else {
+            return getName() + " can't overcome the wall";
+        }
+    }
+
+    @Override
+    public String runDistance(Treadmill treadmill) {
+        if (treadmill.getSize() < getMaxDistance()) {
+            return getName() + " run the distance in " + treadmill.getSize() + " meters";
+        } else {
+            return getName() + " can't run the distance";
+        }
     }
 }
