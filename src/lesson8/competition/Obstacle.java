@@ -1,6 +1,23 @@
 package lesson8.competition;
 
-public abstract class Obstacle {
+public class Obstacle {
 
-    abstract String overcome(Participant participant);
+    private int size;
+
+    public Obstacle(int size) {
+        this.size = size;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public String overcome(Participant participant) {
+
+        return null;
+    }
 }

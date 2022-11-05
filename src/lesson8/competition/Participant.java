@@ -1,18 +1,57 @@
 package lesson8.competition;
 
-public abstract class  Participant {
+public class  Participant {
 
-    public abstract String getName();
-    public abstract boolean getCondition();
-    public abstract void setCondition(boolean condition);
+    private String name;
+    private int maxDistance;
+    private int maxHeight;
+    private boolean condition = true;
 
+    public Participant(String name, int maxDistance, int maxHeight) {
+        this.name = name;
+        this.maxDistance = maxDistance;
+        this.maxHeight = maxHeight;
+    }
 
-    public abstract int inMaxDistance();
+    public String getName() {
+        return name;
+    }
 
-    public abstract int inMaxHeight();
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public abstract String runDistance(Treadmill treadmill);
+    public int getMaxDistance() {
+        return maxDistance;
+    }
 
-    public abstract String jumpHeight(Wall wall);
+    public void setMaxDistance(int maxDistance) {
+        this.maxDistance = maxDistance;
+    }
 
+    public int getMaxHeight() {
+        return maxHeight;
+    }
+
+    public void setMaxHeight(int maxHeight) {
+        this.maxHeight = maxHeight;
+
+    }
+
+    public boolean getCondition() {
+        return condition;
+    }
+
+    public void setCondition(boolean condition) {
+        this.condition = condition;
+    }
+
+    public String runDistance(Treadmill treadmill) {
+
+        return null;
+    }
+    public String jumpHeight(Wall wall) {
+
+        return null;
+    }
 }
