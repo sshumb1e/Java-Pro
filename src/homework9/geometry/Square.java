@@ -1,12 +1,11 @@
 package homework9.geometry;
 
-public class Square implements Shape{
+public class Square implements Figure {
 
     int a = 25;
 
-
     @Override
-    public int area() {
+    public int figureArea() {
         return a * a;
     }
 }

@@ -1,11 +1,11 @@
 package homework9.geometry;
 
-public class Round implements Shape {
+public class Round implements Figure {
 
-    int radius = 46;
+    int radius = 30;
 
     @Override
-    public int area() {
+    public int figureArea() {
         return (int) (radius * radius * Math.PI);
     }
 }

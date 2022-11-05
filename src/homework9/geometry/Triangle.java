@@ -1,11 +1,12 @@
 package homework9.geometry;
 
-public class Triangle implements Shape{
-    int a = 25;
-    int b = 15;
+public class Triangle implements Figure {
+
+    int a = 15;
+    int b = 20;
 
     @Override
-    public int area() {
+    public int figureArea() {
         return a * b / 2;
     }
 }
