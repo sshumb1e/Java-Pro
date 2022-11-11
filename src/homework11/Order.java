@@ -1,32 +1,43 @@
 package homework11;
 
-public class Order implements Comparable<Order> {
+import java.util.Objects;
 
-    private int orderNumber;
-    private String name;
-    static int counter = 1;
+public class Order {
 
-    public Order(String name, int orderNumber) {
+    private final String name;
+    private final int number;
+
+    public Order(String name, int number) {
         this.name = name;
-        this.orderNumber = counter++;
+        this.number = number;
     }
 
-    public int getOrderNumber() {
-        return orderNumber;
+    public String getName() {
+        return name;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return number == order.number && Objects.equals(name, order.number);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, number);
     }
 
     @Override
     public String toString() {
-        return " " + orderNumber + " | " + name;
-    }
-
-    @Override
-    public int compareTo(Order order) {
-        int compare = order.orderNumber;
-        if (this.orderNumber > compare) {
-            return 1;
-        } else {
-            return -1;
-        }
+        return "Order{" +
+                "name='" + name + '\'' +
+                ", number=" + number +
+                '}';
     }
 }
